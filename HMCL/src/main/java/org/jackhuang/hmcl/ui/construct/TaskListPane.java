@@ -123,23 +123,23 @@ public final class TaskListPane extends StackPane {
                 if (task instanceof GameAssetDownloadTask) {
                     task.setName(i18n("assets.download_all"));
                 } else if (task instanceof GameInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.game")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.game")));
                 } else if (task instanceof ForgeNewInstallTask || task instanceof ForgeOldInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.forge")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.forge")));
                 } else if (task instanceof NeoForgeInstallTask || task instanceof NeoForgeOldInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.neoforge")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.neoforge")));
                 } else if (task instanceof LiteLoaderInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.liteloader")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.liteloader")));
                 } else if (task instanceof OptiFineInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.optifine")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.optifine")));
                 } else if (task instanceof FabricInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.fabric")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.fabric")));
                 } else if (task instanceof FabricAPIInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.fabric-api")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.fabric-api")));
                 } else if (task instanceof QuiltInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.quilt")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.quilt")));
                 } else if (task instanceof QuiltAPIInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.quilt-api")));
+                    task.setName(i18n("install.installer.installing", i18n("install.installer.quilt-api")));
                 } else if (task instanceof CurseCompletionTask || task instanceof ModrinthCompletionTask || task instanceof ServerModpackCompletionTask || task instanceof McbbsModpackCompletionTask) {
                     task.setName(i18n("modpack.completion"));
                 } else if (task instanceof ModpackInstallTask) {
@@ -147,15 +147,15 @@ public final class TaskListPane extends StackPane {
                 } else if (task instanceof ModpackUpdateTask) {
                     task.setName(i18n("modpack.update"));
                 } else if (task instanceof CurseInstallTask) {
-                    task.setName(i18n("modpack.install", i18n("modpack.type.curse")));
+                    task.setName(i18n("modpack.installing.given", i18n("modpack.type.curse")));
                 } else if (task instanceof MultiMCModpackInstallTask) {
-                    task.setName(i18n("modpack.install", i18n("modpack.type.multimc")));
+                    task.setName(i18n("modpack.installing.given", i18n("modpack.type.multimc")));
                 } else if (task instanceof ModrinthInstallTask) {
-                    task.setName(i18n("modpack.install", i18n("modpack.type.modrinth")));
+                    task.setName(i18n("modpack.installing.given", i18n("modpack.type.modrinth")));
                 } else if (task instanceof ServerModpackLocalInstallTask) {
-                    task.setName(i18n("modpack.install", i18n("modpack.type.server")));
+                    task.setName(i18n("modpack.install") + " " + i18n("modpack.type.server"));
                 } else if (task instanceof HMCLModpackInstallTask) {
-                    task.setName(i18n("modpack.install", i18n("modpack.type.hmcl")));
+                    task.setName(i18n("modpack.installing.given", i18n("modpack.type.hmcl")));
                 } else if (task instanceof McbbsModpackExportTask || task instanceof MultiMCModpackExportTask || task instanceof ServerModpackExportTask) {
                     task.setName(i18n("modpack.export"));
                 } else if (task instanceof MinecraftInstanceTask) {
@@ -163,7 +163,7 @@ public final class TaskListPane extends StackPane {
                 } else if (task instanceof MojangJavaDownloadTask) {
                     task.setName(i18n("download.java"));
                 } else if (task instanceof JavaInstallTask) {
-                    task.setName(i18n("java.install"));
+                    task.setName(i18n("java.installing"));
                 }
 
                 Platform.runLater(() -> {
@@ -253,14 +253,14 @@ public final class TaskListPane extends StackPane {
                 case "hmcl.modpack": message = i18n("install.modpack"); break;
                 case "hmcl.modpack.download": message = i18n("launch.state.modpack"); break;
                 case "hmcl.install.assets": message = i18n("assets.download"); break;
-                case "hmcl.install.game": message = i18n("install.installer.install", i18n("install.installer.game") + " " + stageValue); break;
-                case "hmcl.install.forge": message = i18n("install.installer.install", i18n("install.installer.forge") + " " + stageValue); break;
-                case "hmcl.install.neoforge": message = i18n("install.installer.install", i18n("install.installer.neoforge") + " " + stageValue); break;
-                case "hmcl.install.liteloader": message = i18n("install.installer.install", i18n("install.installer.liteloader") + " " + stageValue); break;
-                case "hmcl.install.optifine": message = i18n("install.installer.install", i18n("install.installer.optifine") + " " + stageValue); break;
-                case "hmcl.install.fabric": message = i18n("install.installer.install", i18n("install.installer.fabric") + " " + stageValue); break;
-                case "hmcl.install.fabric-api": message = i18n("install.installer.install", i18n("install.installer.fabric-api") + " " + stageValue); break;
-                case "hmcl.install.quilt": message = i18n("install.installer.install", i18n("install.installer.quilt") + " " + stageValue); break;
+                case "hmcl.install.game": message = i18n("install.installer.installing", i18n("install.installer.game") + " " + stageValue); break;
+                case "hmcl.install.forge": message = i18n("install.installer.installing", i18n("install.installer.forge") + " " + stageValue); break;
+                case "hmcl.install.neoforge": message = i18n("install.installer.installing", i18n("install.installer.neoforge") + " " + stageValue); break;
+                case "hmcl.install.liteloader": message = i18n("install.installer.installing", i18n("install.installer.liteloader") + " " + stageValue); break;
+                case "hmcl.install.optifine": message = i18n("install.installer.installing", i18n("install.installer.optifine") + " " + stageValue); break;
+                case "hmcl.install.fabric": message = i18n("install.installer.installing", i18n("install.installer.fabric") + " " + stageValue); break;
+                case "hmcl.install.fabric-api": message = i18n("install.installer.installing", i18n("install.installer.fabric-api") + " " + stageValue); break;
+                case "hmcl.install.quilt": message = i18n("install.installer.installing", i18n("install.installer.quilt") + " " + stageValue); break;
                 default: message = i18n(stageKey); break;
             }
             // @formatter:on
